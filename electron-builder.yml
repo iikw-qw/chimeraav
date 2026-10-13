@@ -1,0 +1,56 @@
+appId: com.chimera.app
+productName: Chimera
+copyright: Copyright (c) 2026 Chimera
+
+directories:
+  output: build
+  buildResources: resources
+
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - package.json
+  - "!**/*.map"
+  - "!**/.DS_Store"
+
+extraResources:
+  - from: python-backend
+    to: backend
+    filter:
+      - "**/*"
+      - "!__pycache__/**"
+      - "!**/*.pyc"
+  - from: resources/icon.png
+    to: icon.png
+  - from: resources/tray-icon.png
+    to: tray-icon.png
+  - from: installer/download-deps.ps1
+    to: installer/download-deps.ps1
+  - from: installer/download-tools.ps1
+    to: installer/download-tools.ps1
+
+asar: true
+
+forceCodeSigning: false
+
+win:
+  target:
+    - nsis
+    - portable
+  icon: resources/icon.ico
+  signAndEditExecutable: false
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: Chimera
+  deleteAppDataOnUninstall: false
+  artifactName: ${productName}-${version}-Setup.${ext}
+  include: installer/nsis-hooks.nsh
+
+portable:
+  artifactName: ${productName}-${version}-Portable.${ext}

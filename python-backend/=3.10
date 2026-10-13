@@ -1,0 +1,17 @@
+Requirement already satisfied: apscheduler in C:\Users\sklya\AppData\Local\Programs\Python\Python313\Lib\site-packages (3.6.3)
+Collecting apscheduler
+  Using cached apscheduler-3.11.2-py3-none-any.whl.metadata (6.4 kB)
+Requirement already satisfied: tzlocal>=3.0 in C:\Users\sklya\AppData\Local\Programs\Python\Python313\Lib\site-packages (from apscheduler) (5.3.1)
+Requirement already satisfied: tzdata in C:\Users\sklya\AppData\Local\Programs\Python\Python313\Lib\site-packages (from tzlocal>=3.0->apscheduler) (2025.3)
+Using cached apscheduler-3.11.2-py3-none-any.whl (64 kB)
+Installing collected packages: apscheduler
+  Attempting uninstall: apscheduler
+    Found existing installation: APScheduler 3.6.3
+    Uninstalling APScheduler-3.6.3:
+      Successfully uninstalled APScheduler-3.6.3
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+python-telegram-bot 13.15 requires APScheduler==3.6.3, but you have apscheduler 3.11.2 which is incompatible.
+Successfully installed apscheduler-3.11.2
+
+[notice] A new release of pip is available: 26.0.1 -> 26.1.1
+[notice] To update, run: C:\Users\sklya\AppData\Local\Programs\Python\Python313\python.exe -m pip install --upgrade pip
